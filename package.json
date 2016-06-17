@@ -1,0 +1,41 @@
+{
+  "name": "angularjs-typed-effect",
+  "version": "1.0.0",
+  "description": "This easy-to-use directive applies a (customisable) typed effect to text within an HTML element.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/garethwhittaker/angularjs-typed-effect.git"
+  },
+  "keywords": [
+    "angular",
+    "typed",
+    "typing",
+    "typewriter",
+    "directive"
+  ],
+  "author": "Gareth Whittaker <garethwhittaker@hotmail.com>",
+  "contributors": [],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/garethwhittaker/angularjs-typed-effect/issues"
+  },
+  "homepage": "https://github.com/garethwhittaker/angularjs-typed-effect",
+  "devDependencies": {
+    "angular": "^1.5.7",
+    "angular-mocks": "^1.5.7",
+    "gulp": "^3.9.1",
+    "gulp-clean-css": "^2.0.10",
+    "gulp-jshint": "^2.0.1",
+    "gulp-plumber": "^1.1.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-uglify": "^1.5.3",
+    "jasmine-core": "^2.4.1",
+    "jshint": "^2.9.2",
+    "jshint-stylish": "^2.2.0",
+    "karma": "^0.13.22",
+    "karma-chrome-launcher": "^1.0.1",
+    "karma-coverage": "^1.0.0",
+    "karma-jasmine": "^1.0.2"
+  },
+  "dependencies": {}
+}

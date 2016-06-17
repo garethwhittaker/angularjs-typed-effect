@@ -1,0 +1,30 @@
+@-webkit-keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
+
+@-moz-keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
+
+@-o-keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
+
+.blink {
+    -webkit-animation: blink 1s infinite;
+    -moz-animation: blink 1s infinite;
+    -o-animation: blink 1s infinite;
+    animation: blink 1s infinite;
+}

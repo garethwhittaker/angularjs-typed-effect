@@ -1,0 +1,20 @@
+{
+  "name": "angularjs-typed-effect",
+  "description": "This easy-to-use directive applies a (customisable) typed effect to text within an HTML element.",
+  "license": "MIT",
+  "keywords": [
+    "angular",
+    "typed",
+    "typing",
+    "typewriter",
+    "directive"
+  ],
+  "authors": [
+    "Gareth Whittaker <garethwhittaker@hotmail.com>"
+  ],
+  "homepage": "https://github.com/garethwhittaker/angularjs-typed-effect",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/garethwhittaker/angularjs-typed-effect.git"
+  }
+}
