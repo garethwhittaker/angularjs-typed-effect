@@ -1,6 +1,6 @@
 {
   "name": "angularjs-typed-effect",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "This easy-to-use directive applies a (customisable) typed effect to text within an HTML element.",
   "repository": {
     "type": "git",

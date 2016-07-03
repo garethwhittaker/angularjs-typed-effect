@@ -7,7 +7,7 @@ function typedEffect($interval, $timeout) {
     var directive = {
         restrict: 'A',
         scope: {
-            text: '='
+            text: '<'
         },
         link: link
     };
@@ -16,6 +16,7 @@ function typedEffect($interval, $timeout) {
 
     function link(scope, element, attrs) {
         var i = 0, interval,
+            text = scope.text || '',
             delay = parseInt(attrs.delay) || 0,
             speed = parseInt(attrs.speed) || 100,
             cursor = attrs.cursor || '|',
@@ -30,8 +31,8 @@ function typedEffect($interval, $timeout) {
             interval = $interval(typeChar, speed);
 
             function typeChar() {
-                if (i <= scope.text.length) {
-                    element.html(scope.text.substring(0, i)).append(cursor);
+                if (i <= text.length) {
+                    element.html(text.substring(0, i)).append(cursor);
                     i++;
                 } else {
                     $interval.cancel(interval);
