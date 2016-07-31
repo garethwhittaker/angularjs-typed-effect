@@ -1,9 +1,11 @@
+/* jshint node: true */
+'use strict';
+
 var gulp        = require('gulp'),
     plumber     = require('gulp-plumber'),
     rename      = require('gulp-rename'),
     cleancss    = require('gulp-clean-css'),
     jshint      = require('gulp-jshint'),
-    stylish     = require('jshint-stylish'),
     uglify      = require('gulp-uglify'),
     karma       = require('karma').Server;
 

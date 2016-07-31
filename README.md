@@ -30,9 +30,10 @@ You also have the option of setting:
 - **speed** ( default: 100 ) - set the typing speed (in milliseconds).
 - **cursor** ( default: | ) - choose the cursor to use.
 - **blink** ( default: true ) - specify if the cursor should remain and continue to blink after typing has finished.
+- **callback** ( default: n/a ) - provide a callback function to be triggered after typing has finished.
 
 ```html
-<p typed-effect text="'hi there'" delay="2000" speed="50" cursor="&blk14;" blink="false"></p>
+<p typed-effect text="'hi there'" delay="500" speed="50" cursor="&blk14;" blink="false" callback="vm.typed()"></p>
 ```
 
 ## Demo

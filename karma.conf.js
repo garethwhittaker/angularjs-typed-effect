@@ -4,8 +4,7 @@ module.exports = function(config) {
         frameworks: ['jasmine'],
 
         // Files to load in browser(s).
-        // Note: These are loaded in the listed order.
-        // http://karma-runner.github.io/0.13/config/files.html
+        // Note: These are loaded in the specified order.
         files: [
             'node_modules/angular/angular.js',
             'node_modules/angular-mocks/angular-mocks.js',
@@ -22,7 +21,11 @@ module.exports = function(config) {
         },
 
         // Browser(s) to launch and capture.
-        // http://karma-runner.github.io/0.13/config/browsers.html
-        browsers: ['Chrome']
+        browsers: ['PhantomJS'],
+
+        // Exit PhantomJS if a ResourceError is encountered (useful if Karma exits without killing PhantomJS).
+        phantomjsLauncher: {
+            exitOnResourceError: true
+        }
     });
 };

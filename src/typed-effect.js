@@ -1,49 +1,60 @@
-angular.module('angularJSTypedEffect', [])
-    .directive('typedEffect', typedEffect);
+/* globals angular */
+(function() {
+    'use strict';
 
-typedEffect.$inject = ['$interval', '$timeout'];
+    angular
+        .module('angularJSTypedEffect', [])
+        .directive('typedEffect', typedEffect);
 
-function typedEffect($interval, $timeout) {
-    var directive = {
-        restrict: 'A',
-        scope: {
-            text: '<'
-        },
-        link: link
-    };
+    typedEffect.$inject = ['$interval', '$timeout'];
 
-    return directive;
+    function typedEffect($interval, $timeout) {
+        var directive = {
+            restrict: 'A',
+            scope: {
+                text: '<',
+                callback: '&'
+            },
+            link: link
+        };
 
-    function link(scope, element, attrs) {
-        var i = 0, interval,
-            text = scope.text || '',
-            delay = parseInt(attrs.delay) || 0,
-            speed = parseInt(attrs.speed) || 100,
-            cursor = attrs.cursor || '|',
-            blink = attrs.blink ? attrs.blink === 'true' : true;
+        return directive;
 
-        cursor = angular.element('<span>' + cursor + '</span>');
+        function link(scope, element, attrs) {
+            var i = 0, interval,
+                text = scope.text || '',
+                delay = parseInt(attrs.delay) || 0,
+                speed = parseInt(attrs.speed) || 100,
+                cursor = attrs.cursor || '|',
+                blink = attrs.blink ? attrs.blink === 'true' : true;
 
-        $timeout(typeText, delay);
+            cursor = angular.element('<span>' + cursor + '</span>');
 
-        function typeText() {
-            typeChar();
-            interval = $interval(typeChar, speed);
+            $timeout(typeText, delay);
 
-            function typeChar() {
-                if (i <= text.length) {
-                    element.html(text.substring(0, i)).append(cursor);
-                    i++;
-                } else {
-                    $interval.cancel(interval);
+            function typeText() {
+                typeChar();
+                interval = $interval(typeChar, speed);
 
-                    if (blink) {
-                        cursor.addClass('blink');
+                function typeChar() {
+                    if (i <= text.length) {
+                        element.html(text.substring(0, i)).append(cursor);
+                        i++;
                     } else {
-                        cursor.remove();
+                        $interval.cancel(interval);
+
+                        if (blink) {
+                            cursor.addClass('blink');
+                        } else {
+                            cursor.remove();
+                        }
+
+                        if (attrs.callback) {
+                            scope.callback();
+                        }
                     }
                 }
             }
         }
     }
-}
+})();
